@@ -45,26 +45,103 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+#### Task Management System - Frontend Documentation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Objective
 
-### Analyzing the Bundle Size
+The **Task Management System** frontend provides a user-friendly interface that allows users to manage their tasks. Users can register, log in, and manage tasks (create, update, delete, and mark tasks as completed). The application also ensures a responsive design for various device sizes, such as mobile, tablet, and desktop.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **React.js**: For building the user interface.
+- **Axios**: For making HTTP requests to the backend API.
+- **Redux**: For state management (if applicable).
+- **CSS**: For styling the application and ensuring responsiveness.
+- **HTML5**: For structuring the web pages.
+- **Bootstrap/Material-UI**: (Optional) For enhanced UI components and layout responsiveness.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Features
 
-### Deployment
+### 1. **User Authentication**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **Registration**: Users can register with a username, email, and password through a registration form.
+- **Login**: Registered users can log in using their username or email and password. Upon successful login, a JWT token is stored for authenticating future requests.
 
-### `npm run build` fails to minify
+### 2. **Task Management**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Create Task**: Authenticated users can create tasks by entering a title, description, due date, and setting the task status.
+- **Edit Task**: Users can edit task details, such as the title, description, due date, or status.
+- **Delete Task**: Users can delete tasks.
+- **Mark Task as Complete**: Users can update the task status to "Completed."
+
+### 3. **User Interface**
+
+- **Dashboard**: After logging in, users are redirected to a task management dashboard where they can view all tasks.
+- **Responsive Design**: The application is fully responsive and works well on mobile, tablet, and desktop screens.
+
+---
+
+## Components
+
+### **Authentication Components**
+
+1. **Register Component**: A form that allows new users to register with their details (username, email, password).
+2. **Login Component**: A form that allows users to log in by entering their credentials (username or email, password).
+
+### **Task Components**
+
+1. **Task List Component**: Displays a list of tasks, showing the title, description, status, and due date.
+2. **Task Form Component**: A form used to create or edit a task.
+3. **Task Details Component**: Displays detailed information about a selected task.
+4. **Task Action Buttons**: Includes buttons for editing, marking as complete, and deleting a task.
+
+---
+
+## API Integration
+
+The frontend interacts with the backend via API calls using **Axios**. Below are the API interactions:
+
+### **Authentication API**
+
+1. **POST** `/api/user/register`
+
+   - Registers a new user.
+
+2. **POST** `/api/user/login`
+   - Logs in a user and retrieves a JWT token.
+
+### **Task API**
+
+1. **GET** `/api/tasks`
+
+   - Retrieves all tasks for the logged-in user.
+
+2. **POST** `/api/tasks`
+
+   - Creates a new task.
+
+3. **PUT** `/api/tasks/{id}`
+
+   - Updates an existing task.
+
+4. **DELETE** `/api/tasks/{id}`
+   - Deletes a task.
+
+---
+
+## Setup Instructions
+
+### Prerequisites
+
+- **Node.js** and **npm**: Ensure that you have Node.js and npm installed on your machine.
+
+### Steps to Set Up
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/ErArunSharma91/TaskManagementSystem_Frontend.git
+   ```
